@@ -22,6 +22,7 @@ from vasu import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+     path('', home),
     path('list/', views.product_list, name='product_list'),
 ]
 
