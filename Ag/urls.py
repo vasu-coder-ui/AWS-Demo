@@ -26,3 +26,11 @@ urlpatterns = [
     path('list/', views.product_list, name='product_list'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+from django.http import HttpResponse
+
+def test_host(request):
+    return HttpResponse(request.get_host())
+
+urlpatterns += [
+    path('check-host/', test_host),
+]
