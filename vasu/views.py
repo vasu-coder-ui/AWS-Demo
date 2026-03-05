@@ -6,6 +6,9 @@ from django.shortcuts import render
 from django.shortcuts import render
 from .models import Product
 
+def home(request):
+    return HttpResponse("Django is deployed successfully 🚀")
+
 def product_list(request):
     products = Product.objects.all()
     return render(request, 'vasu/product_list.html', {'products': products})
