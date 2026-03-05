@@ -35,20 +35,12 @@ urlpatterns += [
     path('check-host/', test_host),
 ]
 
-
-from django.http import HttpResponse
+from django.views.static import serve
+from django.urls import re_path
 from django.conf import settings
-import os
-
-def debug_media(request):
-    file_path = os.path.join(settings.MEDIA_ROOT, 'products', 'Screenshot_2025-08-06_123832.png')
-    exists = os.path.exists(file_path)
-    return HttpResponse(f"""
-    MEDIA_ROOT = {settings.MEDIA_ROOT} <br>
-    Full Path = {file_path} <br>
-    Exists? = {exists}
-    """)
 
 urlpatterns += [
-    path('debug-media/', debug_media),
+    re_path(r'^media/(?P<path>.*)$', serve, {
+        'document_root': settings.MEDIA_ROOT,
+    }),
 ]
