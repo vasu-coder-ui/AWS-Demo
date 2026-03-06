@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-%$h)05@w=a+zs9k5fcwu!_))en3pwc0i%v-@b3hekyd3ud92&-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["kavaro.in",
+    "www.kavaro.in",
+    "3.111.157.39"]
 
 
 # Application definition
