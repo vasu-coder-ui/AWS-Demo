@@ -81,8 +81,12 @@ WSGI_APPLICATION = 'Ag.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'db1',
+        'USER': 'admin',
+        'PASSWORD': 'pydevvasu',
+        'HOST': 'database-1.cjm0y6q20eja.ap-south-1.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
 
